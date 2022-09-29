@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="main">
+      <div class="head">
+        <p class="words">Words</p>
+        <button class="btn" onclick="clearText()">Clear</button>
+        <p class="letters">Letters</p>
+      </div>
+      <textarea class="text" placeholder="Enter text"></textarea>
+    </div>
+    <input
+      type="file"
+      accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.txt"
+      class="addFile"
+    />
+
+    <!-- JS -->
     <script src="script.js"></script>
   </body>
 </html>
