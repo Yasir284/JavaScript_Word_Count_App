@@ -25,7 +25,7 @@
 
 ## 🎥 Working
 
-![Gif]()
+![Gif](Javascript_word_counter.gif)
 
 ---
 

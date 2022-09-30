@@ -16,7 +16,10 @@ function getWordCount(text) {
   if (text === "") {
     return 0;
   }
-  return text.trim().split(" ").length;
+  return text
+    .trim()
+    .split(" ")
+    .filter((val) => val !== "").length;
 }
 
 function getLetterCount(text) {
@@ -24,7 +27,7 @@ function getLetterCount(text) {
 }
 
 function clearText() {
-  text.textContent = "";
+  text.value = "";
   document.querySelector(".wordsCount").textContent = 0;
   document.querySelector(".lettersCount").textContent = 0;
   document.querySelector(".addFile").value = "";
@@ -34,13 +37,13 @@ document.querySelector(".addFile").addEventListener("input", function () {
   const reader = new FileReader();
   reader.readAsText(this.files[0]);
   reader.onload = (event) => {
-    text.textContent = event.target.result;
-    console.log(text.textContent);
+    text.value = event.target.result;
+    console.log(text.value);
     document.querySelector(".wordsCount").textContent = getWordCount(
-      text.textContent
+      text.value
     );
     document.querySelector(".lettersCount").textContent = getLetterCount(
-      text.textContent
+      text.value
     );
   };
   reader.onerror = (error) => reject(error);
