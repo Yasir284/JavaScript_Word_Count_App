@@ -12,17 +12,23 @@
   <body>
     <div class="main">
       <div class="head">
-        <p class="words">Words</p>
+        <div class="countDiv">
+          <p class="wordsCount count">0</p>
+          <p class="p">Words</p>
+        </div>
         <button class="btn" onclick="clearText()">Clear</button>
-        <p class="letters">Letters</p>
+        <div class="countDiv">
+          <p class="lettersCount count">0</p>
+          <p class="p">Letters</p>
+        </div>
       </div>
       <textarea class="text" placeholder="Enter text"></textarea>
+      <input
+        type="file"
+        accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.txt"
+        class="addFile"
+      />
     </div>
-    <input
-      type="file"
-      accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.txt"
-      class="addFile"
-    />
 
     <!-- JS -->
     <script src="script.js"></script>

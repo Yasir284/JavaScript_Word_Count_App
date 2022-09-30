@@ -4,12 +4,8 @@ text.addEventListener("keyup", getCount);
 
 function getCount() {
   let getText = text.value;
-  document.querySelector(".words").textContent = `Words : ${getWordCount(
-    getText
-  )}`;
-  document.querySelector(".letters").textContent = `Letters : ${getLetterCount(
-    getText
-  )}`;
+  document.querySelector(".wordsCount").textContent = getWordCount(getText);
+  document.querySelector(".lettersCount").textContent = getLetterCount(getText);
 
   if (event.key == "Delete") {
     clearText();
@@ -28,14 +24,24 @@ function getLetterCount(text) {
 }
 
 function clearText() {
-  text.value = "";
-  document.querySelector(".words").textContent = "Words";
-  document.querySelector(".letters").textContent = "Letters";
+  text.textContent = "";
+  document.querySelector(".wordsCount").textContent = 0;
+  document.querySelector(".lettersCount").textContent = 0;
+  document.querySelector(".addFile").value = "";
 }
 
-document.querySelector(".addFile").addEventListener("change", function () {
+document.querySelector(".addFile").addEventListener("input", function () {
   const reader = new FileReader();
-  reader.onload = (event) => console.log(event.target.result); // desired file content
+  reader.readAsText(this.files[0]);
+  reader.onload = (event) => {
+    text.textContent = event.target.result;
+    console.log(text.textContent);
+    document.querySelector(".wordsCount").textContent = getWordCount(
+      text.textContent
+    );
+    document.querySelector(".lettersCount").textContent = getLetterCount(
+      text.textContent
+    );
+  };
   reader.onerror = (error) => reject(error);
-  reader.readAsText(this.files[0]); // you could also read images and other binaries
 });

@@ -4,11 +4,9 @@
 
 # JavaScript Word Count App
 
-- This is Javascript Project. In this project I have made a **Word Count App** with JavasCript, which starts, stops and reset the timer.
+- This is Javascript Project. In this project I have made a **Word Count App** with JavasCript, which counts the words and characters you type in the textarea, you can also add a .txt file to check its word and character count.
 
-- I have tried to make it look classy. Please find the link below.
-
-- It took me 3-4 hrs to make this project.
+- It took me 3-4 hrs to make this project. Please find the link below.
 
   [![badge](https://img.shields.io/badge/LINK%20OF-PROJECT-white)](https://javascript-wordcount-project3.netlify.app/)
 
@@ -18,6 +16,7 @@
 
 - JavaScript
 - To Use DOM
+- Use of FileReader method
 - Creating Elements in Javascript
 - Adding Elements in HTML using JavaScript
 - Adding Attributes to the Elements
